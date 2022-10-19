@@ -8,6 +8,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { AddRecepieComponent } from './add-recepie/add-recepie.component';
 import { FormsModule } from '@angular/forms';
 import { ViewRecepieComponent } from './view-recepie/view-recepie.component';
+import { HttpClientModule } from '@angular/common/http'
 
 const appRoutes:Routes=[
 {
@@ -27,7 +28,8 @@ const appRoutes:Routes=[
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot(appRoutes),
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
