@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-add-recepie',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddRecepieComponent implements OnInit {
 
-  constructor() { }
+  constructor(private myapi:ApiService) { }
 
   name=""
   description=""
@@ -22,6 +23,12 @@ export class AddRecepieComponent implements OnInit {
       "colour":this.colour
     }
     console.log(data)
+    this.myapi.addRecepie(data).subscribe(
+      (data)=>{
+        alert("successfully added")
+      }
+    )
+
   }
 
   ngOnInit(): void {
